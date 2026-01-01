@@ -69,3 +69,48 @@ Terraform’s declarative model, providers, modules, and state management can be
 This can slow adoption if teams are not properly trained.
 
 ---
+
+5. **Provider and Version Drift**
+   
+Terraform depends on:
+
+- Providers
+- Modules
+- Versions
+
+Changes in provider behavior or version mismatches can cause:
+
+- Unexpected plan changes
+- Breaking updates
+- Inconsistent environments
+
+Without strict version pinning and testing, upgrades can introduce instability.
+
+---
+6. **Not Ideal for Everything**
+   
+Terraform is excellent for infrastructure provisioning, but it is not always the best tool for:
+
+- rapidly changing application deployments
+- runtime configuration management
+- day-to-day operational changes
+
+Using Terraform for workloads it wasn’t designed for can create unnecessary complexity.
+
+---
+
+7. **False Sense of Security**
+   
+Because infrastructure is “defined as code,” teams may assume:
+
+- security is automatically handled
+- compliance is guaranteed
+- misconfigurations are impossible
+
+In reality, Terraform enforces what you write, not what you intended. Poorly designed configurations can still produce insecure infrastructure at scale.
+
+---
+
+**Why These Risks Matter for Security**
+
+These challenges are especially relevant in cloud security and compliance environments. Terraform magnifies both good and bad decisions. When used correctly, it enforces strong security baselines; when misused, it can rapidly deploy insecure infrastructure across an entire environment.

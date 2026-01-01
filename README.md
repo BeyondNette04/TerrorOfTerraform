@@ -28,11 +28,44 @@ Because the state file may contain metadata about infrastructure, it must be car
 
 ---
 
-2. **State File Management Risks**
+2. **Secrets Handling Can Be Dangerous**
    
-Terraform relies on a state file to track managed resources. If this file is:
+Terraform configurations and state files can inadvertently expose:
 
-- lost
-- corrupted
-- improperly shared
-- insecurely stored
+- credentials
+- access tokens
+- secrets
+- sensitive resource attributes
+
+If secrets are hardcoded or poorly managed, they may end up in:
+
+- source control
+- logs
+- state files
+
+This makes Terraform powerful but also risky—if not paired with proper secrets management practices.
+
+---
+3. **Destructive Changes Are Easy to Make**
+   
+Terraform will do exactly what the code says, even if that means:
+
+- deleting production resources
+- recreating infrastructure
+- causing downtime
+
+A single misconfigured change or poorly reviewed plan can result in widespread impact. Without strong review processes, Terraform can turn small mistakes into large outages very quickly.
+
+---
+4. **Steep Learning Curve for Beginners**
+   
+Terraform’s declarative model, providers, modules, and state management can be difficult to understand initially. Common challenges include:
+
+- understanding resource dependencies
+- debugging failed plans
+- interpreting complex error messages
+- learning provider-specific behavior
+
+This can slow adoption if teams are not properly trained.
+
+---

@@ -7,6 +7,7 @@ https://developer.hashicorp.com/terraform
 
 While Terraform is a powerful Infrastructure as Code (IaC) tool, it also introduces challenges that teams must understand and manage effectively. Improper use or incomplete understanding of Terraform can lead to operational, security, and organizational issues.
 
+---
 
 1. **State File Management Risks**
    
